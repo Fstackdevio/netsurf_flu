@@ -21,35 +21,35 @@ class _WrapperScreenState extends State<WrapperScreen> {
  //   }
 //  }
 
-  void _showModalSheet(Choice choice) {
-    showModalBottomSheet(
-      context: context,
-      builder: (builder) {
-        return new Container(
-          height: 250.0,
-          color: Colors.white,
-          padding: const EdgeInsets.all(32.0),
-          child: Row(
-            children: <Widget>[
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Container(
-                      padding: const EdgeInsets.only(bottom: 8.0),
-                      child: Text('SETTINGS TRAY', 
-                        style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),
-                      ),
-                    )
-                  ],
-                ),
-              )
-            ],
-          )
-        );
+ // void _showModalSheet(Choice choice) {
+  //  showModalBottomSheet(
+  //    context: context,
+  //    builder: (builder) {
+   //     return new Container(
+    //      height: 250.0,
+       //   color: Colors.white,
+       //   padding: const EdgeInsets.all(32.0),
+      //    child: Row(
+      //      children: <Widget>[
+      //        Expanded(
+       //         child: Column(
+        //          crossAxisAlignment: CrossAxisAlignment.center,
+         //         children: <Widget>[
+                  //  Container(
+                   //   padding: const EdgeInsets.only(bottom: 8.0),
+                    //  child: Text('SETTINGS TRAY', 
+                    //    style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),
+                  //    ),
+               //     )
+               //   ],
+             //   ),
+           //   )
+          //  ],
+       //   )
+       // );
 
-      });
-  }
+     // });
+  //}
 
   Column buttonColumn(IconData icon, String label) {
     Color color = Theme.of(context).accentColor;
@@ -100,13 +100,14 @@ class _WrapperScreenState extends State<WrapperScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Netsurf'),
+        //centerTitle: true,
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.notifications),
             onPressed: () {},
           ),
           new PopupMenuButton<Choice>(
-            onSelected: _showModalSheet,
+            onSelected: null,
             itemBuilder: (BuildContext context) {
               return choices.map((Choice choice) {
                 return PopupMenuItem<Choice>(
@@ -121,10 +122,96 @@ class _WrapperScreenState extends State<WrapperScreen> {
           ),
         ],
       ),
+      drawer: new Drawer(
+        child: new Column(
+          children: <Widget>[
+            new UserAccountsDrawerHeader(
+              accountName: new Text('Kalango Michael'),
+              accountEmail: new Text('kalango.michael@lmu.edu.ng'),
+              currentAccountPicture: new CircleAvatar(
+              ),
+            ),
+            new ListTile(
+              leading: new CircleAvatar(
+                child: new Icon(
+                  Icons.home,
+                  size: 20.0,
+                )
+              ),
+              title: new Text('Home'),
+            ),
+            new ListTile(
+              leading: new CircleAvatar(
+                child: new Icon(
+                  Icons.account_circle,
+                  size: 20.0,
+                )
+              ),
+              title: new Text('Profile'),
+            ),
+            new Divider(),
+            new ListTile(
+              leading: new CircleAvatar(
+                child: new Icon(
+                  Icons.swap_horiz,
+                  size: 20.0,
+                )
+              ),
+              title: new Text('Switch Account'),
+            ),
+            new ListTile(
+              leading: new CircleAvatar(
+                child: new Icon(
+                  Icons.feedback,
+                  size: 20.0,
+                )
+              ),
+              title: new Text('Feedback'),
+            ),
+            new Divider(),
+            new ListTile(
+              leading: new CircleAvatar(
+                child: new Icon(
+                  Icons.info_outline,
+                  size: 20.0,
+                )
+              ),
+              title: new Text('About App'),
+            ),
+            new ListTile(
+              leading: new CircleAvatar(
+                child: new Icon(
+                  Icons.star,
+                  size: 20.0,
+                )
+              ),
+              title: new Text('Rate App'),
+            ),
+                        new Divider(),
+            new ListTile(
+              trailing: new CircleAvatar(
+                child: new Icon(
+                  Icons.settings,
+                  size: 20.0,
+                )
+              ),
+              title: new Text('Settings'),
+            ),
+            new ListTile(
+              trailing: new CircleAvatar(
+                child: new Icon(
+                  Icons.exit_to_app,
+                  size: 20.0,
+                )
+              ),
+              title: new Text('Logout'),
+            )
+          ]
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.green,
         onPressed: () {
-          Null;
         },
         child: Icon(Icons.flash_on, color: Colors.white),
       ),
@@ -139,6 +226,6 @@ class Choice {
 }
 
 const List<Choice> choices = const <Choice>[
-  const Choice(title: ('Settings'), icon: Icons.settings),
-  //const Choice(title: Lumous.quit, icon: Icons.exit_to_app),
+  //const Choice(title: ('Settings'), icon: Icons.settings),
+  const Choice(title: ('Quit'), icon: Icons.exit_to_app),
 ];
