@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:netsurf/pages/Ewallet.dart';
+import 'package:netsurf/pages/Home.dart';
 
 class WrapperScreen extends StatefulWidget {
   @override
   _WrapperScreenState createState() => new _WrapperScreenState();
 }
 
-class _WrapperScreenState extends State<WrapperScreen> {
+class _WrapperScreenState extends State<WrapperScreen> with SingleTickerProviderStateMixin {
+
+  TabController _tabController;
 
   @override
   void initState() {
     super.initState();
+    _tabController= new TabController(initialIndex: 1, length: 2, vsync: this);
   }
 
  // Widget _select(Choice choice) {
@@ -98,8 +103,17 @@ class _WrapperScreenState extends State<WrapperScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Netsurf'),
+      appBar: new AppBar(
+        title: new Text('Netsurf'),
+        elevation: 0.7,
+        bottom: new TabBar(
+          controller: _tabController,
+          indicatorColor:Colors.white,
+          tabs:<Widget>[
+            new Tab(text:"Home"),
+            new Tab(text:"E-Wallet"),
+          ]
+        ),
         //centerTitle: true,
         actions: <Widget>[
           IconButton(
@@ -120,6 +134,13 @@ class _WrapperScreenState extends State<WrapperScreen> {
               }).toList();
             },
           ),
+        ],
+      ),
+      body: new TabBarView(
+        controller: _tabController,
+        children:<Widget>[
+          new Home(),
+          new Ewallet(),
         ],
       ),
       drawer: new Drawer(

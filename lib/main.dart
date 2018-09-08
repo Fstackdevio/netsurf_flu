@@ -6,4 +6,5 @@ void main() => runApp(MaterialApp(
   theme: ThemeData(primaryColor: Colors.greenAccent, accentColor: Colors.green),
   debugShowCheckedModeBanner: false,
   home: LoginScreen(),
+  title: "Netsurf",
 ));
