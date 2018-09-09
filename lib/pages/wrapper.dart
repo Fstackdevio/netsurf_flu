@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:netsurf/pages/Ewallet.dart';
 import 'package:netsurf/pages/Home.dart';
+import 'package:netsurf/pages/about_screen.dart';
+import 'package:netsurf/pages/feedback_screen.dart';
+import 'package:netsurf/pages/login_screen.dart';
+import 'package:netsurf/pages/message_screen.dart';
+import 'package:netsurf/pages/network_screen.dart';
+import 'package:netsurf/pages/profile_screen.dart';
+import 'package:netsurf/pages/settings_screen.dart';
 
 class WrapperScreen extends StatefulWidget {
   @override
@@ -118,7 +125,13 @@ class _WrapperScreenState extends State<WrapperScreen> with SingleTickerProvider
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.notifications),
-            onPressed: () {},
+            onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => MessageScreen()
+                  )
+                );
+            },
           ),
           new PopupMenuButton<Choice>(
             onSelected: null,
@@ -160,6 +173,13 @@ class _WrapperScreenState extends State<WrapperScreen> with SingleTickerProvider
                 )
               ),
               title: new Text('Home'),
+              onTap: (){
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => WrapperScreen()
+                  )
+                );
+              }
             ),
             new ListTile(
               leading: new CircleAvatar(
@@ -169,6 +189,13 @@ class _WrapperScreenState extends State<WrapperScreen> with SingleTickerProvider
                 )
               ),
               title: new Text('Profile'),
+              onTap: (){
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => ProfileScreen()
+                  )
+                );
+              }
             ),
             new Divider(),
             new ListTile(
@@ -188,6 +215,13 @@ class _WrapperScreenState extends State<WrapperScreen> with SingleTickerProvider
                 )
               ),
               title: new Text('Feedback'),
+              onTap: (){
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => FeedbackScreen()
+                  )
+                );
+              }
             ),
             new Divider(),
             new ListTile(
@@ -198,6 +232,13 @@ class _WrapperScreenState extends State<WrapperScreen> with SingleTickerProvider
                 )
               ),
               title: new Text('About App'),
+              onTap: (){
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => AboutScreen()
+                  )
+                );
+              }
             ),
             new ListTile(
               leading: new CircleAvatar(
@@ -217,6 +258,13 @@ class _WrapperScreenState extends State<WrapperScreen> with SingleTickerProvider
                 )
               ),
               title: new Text('Settings'),
+              onTap: (){
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => SettingsScreen()
+                  )
+              );
+              }
             ),
             new ListTile(
               trailing: new CircleAvatar(
@@ -226,6 +274,13 @@ class _WrapperScreenState extends State<WrapperScreen> with SingleTickerProvider
                 )
               ),
               title: new Text('Logout'),
+              onTap: (){
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => LoginScreen()
+                  )
+                );
+              }
             )
           ]
         ),
@@ -233,6 +288,11 @@ class _WrapperScreenState extends State<WrapperScreen> with SingleTickerProvider
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.green,
         onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (BuildContext context) => NetworkScreen()
+            )
+          );
         },
         child: Icon(Icons.flash_on, color: Colors.white),
       ),
