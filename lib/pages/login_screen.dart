@@ -73,6 +73,10 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
                                 Padding(
                                   padding: EdgeInsets.all(10.0),
                                 ),
+                                Icon(
+                                  Icons.public,
+                                  size: 150.0,
+                                ),
                                 Text('Netsurf',
                                   style: TextStyle(
                                     fontSize: 30.0, 

@@ -121,16 +121,18 @@ class _WrapperScreenState extends State<WrapperScreen> with SingleTickerProvider
             new Tab(text:"E-Wallet"),
           ]
         ),
-        //centerTitle: true,
+        centerTitle: true,
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.notifications),
+            tooltip: "Notifications",
+            color: Colors.white,
             onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (BuildContext context) => MessageScreen()
-                  )
-                );
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (BuildContext context) => MessageScreen()
+                )
+              );
             },
           ),
           new PopupMenuButton<Choice>(

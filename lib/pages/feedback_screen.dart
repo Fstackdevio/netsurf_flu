@@ -12,13 +12,31 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
       appBar: AppBar(
         title: Text('Feedback'),
       ),
-      body: new Center(
-        child: new Text('Feedback Page',
-          style: new TextStyle(
-            fontSize: 25.0
+      body: Card(
+        color: Colors.blue,
+        shape: RoundedRectangleBorder(
+          side: BorderSide.none,
+          borderRadius: BorderRadius.horizontal(
+            left: Radius.zero,
+            right: Radius.zero)
+        ),
+        child: Container(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+              ),
+              TextField(
+                decoration: InputDecoration(
+                  hintText: "Name"
+                )
+              )
+            ], 
           ),
         ),
-      ),
+      )
     );
   }
 }
