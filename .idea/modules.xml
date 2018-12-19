@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/netsurf.iml" filepath="$PROJECT_DIR$/netsurf.iml" />
-      <module fileurl="file://$PROJECT_DIR$/netsurf_android.iml" filepath="$PROJECT_DIR$/netsurf_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/netsurf_pro.iml" filepath="$PROJECT_DIR$/netsurf_pro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/netsurf_pro_android.iml" filepath="$PROJECT_DIR$/android/netsurf_pro_android.iml" />
     </modules>
   </component>
 </project>

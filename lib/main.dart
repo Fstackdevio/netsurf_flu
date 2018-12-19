@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:netsurf/pages/login_screen.dart';
+import 'package:netsurf_pro/pages/login.dart';
 
-
-void main() => runApp(MaterialApp(
-  theme: ThemeData(primaryColor: Colors.greenAccent, accentColor: Colors.green),
-  debugShowCheckedModeBanner: false,
-  home: LoginScreen(),
-  title: "Netsurf",
+void main() => runApp(new MaterialApp(
+    title: 'Netsurf_pro',
+    debugShowCheckedModeBanner: false,
+    home: LoginScreen(),
 ));
